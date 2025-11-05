@@ -1,0 +1,22 @@
+{
+  "name": "SmartAdmin Login Extension",
+  "description": "An extension to enhance the SmartAdmin login experience.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "logo.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://stg.uparcel.sg/admin/login/",
+        "https://www.uparcel.sg/admin/login/"
+      ],
+      "js": ["hello.js"]
+    }
+  ]
+}
