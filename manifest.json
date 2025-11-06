@@ -16,7 +16,33 @@
         "https://stg.uparcel.sg/admin/login/",
         "https://www.uparcel.sg/admin/login/"
       ],
-      "js": ["hello.js"]
+      "js": ["login.js"]
+    },
+    {
+      "matches": [
+        "https://stg.uparcel.sg/admin/otp/*",
+        "https://www.uparcel.sg/admin/otp/*"
+      ],
+      "js": ["otp.js"]
+    },
+    {
+      "matches": [
+        "https://stg.uparcel.sg/admin/",
+        "https://www.uparcel.sg/admin/",
+        "https://stg.uparcel.sg/admin/jobs/",
+        "https://www.uparcel.sg/admin/jobs/"
+      ],
+      "js": ["home.js"]
+    },
+    {
+      "matches": [
+        "https://stg.uparcel.sg/admin/view_profile/",
+        "https://www.uparcel.sg/admin/view_profile/"
+      ],
+      "js": ["profile.js"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }

@@ -1,10 +1,6 @@
-// Content script for SmartAdmin login page
-console.log('SmartAdmin Extension content script loaded!');
-
-// Find the login button
 const loginBtn = document.querySelector('button[type="submit"].btn-warning');
 if (!loginBtn) {
-    console.log('Login button not found');
+    console.log('[SmartAdmin] Login button not found');
 } else {
     loginBtn.addEventListener('click', function () {
         const usernameInput = document.getElementById('id_username');
@@ -18,10 +14,10 @@ if (!loginBtn) {
                     password
                 }
             }, function() {
-                console.log('Credentials saved to chrome.storage.local');
+                console.log('[SmartAdmin] Credentials saved');
             });
         } else {
-            console.log('Username or password input not found or chrome.storage unavailable');
+            console.log('[SmartAdmin]Username or password input not found');
         }
     });
 }
