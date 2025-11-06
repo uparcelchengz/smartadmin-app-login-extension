@@ -100,7 +100,7 @@ This project is released under the **MIT License** — see the `LICENSE` file fo
 
 ## Contact / Support
 
-If you find a bug or want to request a feature, please open an issue: `https://github.com/yourusername/smartadmin-app-login-extension/issues`.
+If you find a bug or want to request a feature, please open an issue: `https://github.com/uparcelchengz/smartadmin-app-login-extension/issues`.
 
 ---
 
