@@ -1,5 +1,9 @@
 # SmartAdmin Login Assistant
 
+<p align="center">
+  <img src="assets/logo.svg" alt="SmartAdmin Logo" width="160" />
+</p>
+
 > A Chrome extension that enables browser → desktop login integration for the SmartAdmin app (capstone project).
 
 **Important:** The primary purpose of this extension is to assist the SmartAdmin desktop application used in the author's capstone project. The automatic save/fill and OTP automation features are provided as convenient extras to make the extension useful during development and testing.
