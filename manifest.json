@@ -23,7 +23,7 @@
         "https://stg.uparcel.sg/admin/otp/*",
         "https://www.uparcel.sg/admin/otp/*"
       ],
-      "js": ["otp.js"]
+      "js": ["otpauth.umd.min.js", "otp.js"]
     },
     {
       "matches": [

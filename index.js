@@ -1,4 +1,3 @@
-
 // ============================================
 // UI RENDERING FUNCTIONS
 // ============================================
@@ -93,7 +92,7 @@ function renderSettingsPage() {
                 <div class="setting-item">
                     <div class="setting-info">
                         <div class="setting-title">Remember Credentials</div>
-                        <div class="setting-description">Stop user credentials for being removed every day</div>
+                        <div class="setting-description">Stop user credentials from being removed every day</div>
                     </div>
                     <div class="setting-action">
                         <div class="toggle-switch" data-setting="rememberCreds">
@@ -344,15 +343,41 @@ function attachSettingsPageHandlers() {
         clearCredBtn.onclick = handleClearCredentials;
     }
     
-    // Attach toggle handlers
+    // Load saved settings and set toggle states
     const toggles = document.querySelectorAll('.toggle-switch');
-    toggles.forEach(toggle => {
-        toggle.onclick = function() {
-            const isActive = this.classList.toggle('active');
-            const settingName = this.getAttribute('data-setting');
-            handleToggleSetting(settingName, isActive);
-        };
+    const settingKeys = Array.from(toggles).map(toggle => {
+        const settingName = toggle.getAttribute('data-setting');
+        return `setting_${settingName}`;
     });
+    
+    if (typeof chrome !== 'undefined' && chrome.storage && chrome.storage.local) {
+        chrome.storage.local.get(settingKeys, function(result) {
+            toggles.forEach(toggle => {
+                const settingName = toggle.getAttribute('data-setting');
+                const settingKey = `setting_${settingName}`;
+                const isActive = result[settingKey] === true;
+                
+                if (isActive) {
+                    toggle.classList.add('active');
+                }
+                
+                // Attach click handler
+                toggle.onclick = function() {
+                    const newState = this.classList.toggle('active');
+                    handleToggleSetting(settingName, newState);
+                };
+            });
+        });
+    } else {
+        // Fallback: just attach handlers without loading saved state
+        toggles.forEach(toggle => {
+            toggle.onclick = function() {
+                const isActive = this.classList.toggle('active');
+                const settingName = this.getAttribute('data-setting');
+                handleToggleSetting(settingName, isActive);
+            };
+        });
+    }
 }
 
 // ============================================
