@@ -110,6 +110,7 @@ body {
     max-height: 280px;
     overflow-y: auto;
     margin-top: 16px;
+    width: 350px;
 }
 
 .settings-container::-webkit-scrollbar {
@@ -154,13 +155,13 @@ body {
 .setting-title {
     color: #c7a4ff;
     font-weight: 600;
-    font-size: 0.95em;
+    font-size: 1.25em;
     margin-bottom: 4px;
 }
 
 .setting-description {
     color: #b48cff;
-    font-size: 0.8em;
+    font-size: 1.05em;
     opacity: 0.8;
 }
 
@@ -174,7 +175,7 @@ body {
     border: none;
     border-radius: 6px;
     padding: 8px 16px;
-    font-size: 0.85em;
+    font-size: 1em;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;

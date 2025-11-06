@@ -74,38 +74,41 @@ function renderSettingsPage() {
                         <button id="clear-cred-btn" class="clear-cred-btn">Clear</button>
                     </div>
                 </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-title">Clear Credentials After App Login</div>
+                        <div class="setting-description">
+                            Automatically remove login info after use to login SmartAdmin App<br>
+                            <span class="section-reminder">(even if "Remember Credentials" is <strong>ON</strong>)</span>
+                        </div>
+                    </div>
+                    <div class="setting-action">
+                        <div class="toggle-switch" data-setting="clearCredsAfterLogin">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="setting-title">Remember Credentials</div>
+                        <div class="setting-description">Stop user credentials for being removed every day</div>
+                    </div>
+                    <div class="setting-action">
+                        <div class="toggle-switch" data-setting="rememberCreds">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="setting-item">
                     <div class="setting-info">
                         <div class="setting-title">Auto-login</div>
-                        <div class="setting-description">Automatically login when detected</div>
+                        <div class="setting-description">Automatically login with saved credentials</div>
                     </div>
                     <div class="setting-action">
                         <div class="toggle-switch" data-setting="autoLogin">
-                            <div class="toggle-slider"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="setting-item">
-                    <div class="setting-info">
-                        <div class="setting-title">Remember Credentials</div>
-                        <div class="setting-description">Save login info for future use</div>
-                    </div>
-                    <div class="setting-action">
-                        <div class="toggle-switch active" data-setting="rememberCreds">
-                            <div class="toggle-slider"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="setting-item">
-                    <div class="setting-info">
-                        <div class="setting-title">Notifications</div>
-                        <div class="setting-description">Show notifications on login</div>
-                    </div>
-                    <div class="setting-action">
-                        <div class="toggle-switch active" data-setting="notifications">
                             <div class="toggle-slider"></div>
                         </div>
                     </div>
@@ -123,17 +126,6 @@ function renderSettingsPage() {
                     </div>
                 </div>
                 
-                <div class="setting-item">
-                    <div class="setting-info">
-                        <div class="setting-title">Debug Mode</div>
-                        <div class="setting-description">Show console logs for debugging</div>
-                    </div>
-                    <div class="setting-action">
-                        <div class="toggle-switch" data-setting="debugMode">
-                            <div class="toggle-slider"></div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     `;
