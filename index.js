@@ -188,7 +188,44 @@ function handleLoginClick() {
 
 function handleProceed() {
     console.log('Proceed function called - implement login logic here');
-    // TODO: Implement actual login logic
+
+    if (typeof chrome === 'undefined' || !chrome.storage || !chrome.storage.local) {
+        console.error('chrome.storage.local not available');
+        return;
+    }
+
+    chrome.storage.local.get(['setting_clearCredsAfterLogin', 'smartadmin_login', 'profileData'], async function(result){
+        const smart = result.smartadmin_login || {};
+        const profile = result.profileData || {};
+        const clearCredsAfterLogin = result.setting_clearCredsAfterLogin;
+
+        if (!smart.username || !smart.password || !profile.name || !profile.secret) {
+            showModal('Error', 'Missing credentials or profile data. Please set up your credentials first.', [
+                { text: 'OK' }
+            ]);
+            return;
+        }
+
+        if (clearCredsAfterLogin) {
+            await clearUserCredentials(true);
+        }
+
+        const username = encodeURIComponent(smart.username);
+        const password = encodeURIComponent(smart.password);
+        const name = encodeURIComponent(profile.name);
+        const secret = encodeURIComponent(profile.secret);
+
+        const deepLinkUrl = `smartadmin://login?username=${username}&password=${password}&name=${name}&secret=${secret}`;
+
+
+        // Try to open the deep link in a new tab to trigger protocol handler
+        await chrome.tabs.create({ url: deepLinkUrl }, function(tab) {
+            console.log('Deep link opened:', deepLinkUrl, 'tabId:', tab && tab.id);
+
+            // Close popup window (optional)
+            window.close();
+        });
+    });
 }
 
 function handleWait() {
