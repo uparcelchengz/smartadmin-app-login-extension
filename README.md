@@ -1,7 +1,7 @@
 # SmartAdmin Login Assistant
 
 <p align="center">
-  <img src="https://github.com/uparcelchengz/smartadmin-app-login-extension/blob/main/logo.png" alt="SmartAdmin Logo" width="160" />
+  <img src="https://github.com/uparcelchengz/smartadmin-app-login-extension/blob/main/ChromeExtension/logo.png?raw=true" alt="SmartAdmin Logo" width="160" />
 </p>
 
 > A Chrome extension that enables browser → desktop login integration for the SmartAdmin app (capstone project).
