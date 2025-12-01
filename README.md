@@ -104,4 +104,3 @@ If you find a bug or want to request a feature, please open an issue: `https://g
 
 ---
 
-If you'd like, I can produce a shorter marketing blurb for the Chrome Web Store short description and a more detailed store listing text.
